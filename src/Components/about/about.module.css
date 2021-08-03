@@ -1,0 +1,14 @@
+.wrapper {
+    align-items: center;
+}
+
+.item {
+    overflow-x:hidden;
+    margin-left: 500px;
+    border: solid 2px black;
+    padding: 20px;
+    margin-top: 40px;
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}

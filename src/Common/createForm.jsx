@@ -1,4 +1,4 @@
-import { Field } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import s from './Login.module.css';
 
 export const Textarea = ({ input, meta, ...props }) => {

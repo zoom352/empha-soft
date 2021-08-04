@@ -4,6 +4,7 @@ import { createField, Input, Textarea2 } from '../../Common/createForm.jsx';
 import { maxLengthCreatorLogin, required } from '../../utils/validates.js';
 import st from '../../Common/Login.module.css';
 import { loginThunk } from '../../Redux/auth-reducer.js';
+import { connect } from 'react-redux';
 
 
 const LoginForm = ({ handleSubmit, error }) => {
@@ -13,13 +14,13 @@ const LoginForm = ({ handleSubmit, error }) => {
     </h1>
     <form onSubmit={handleSubmit}>
       <div>
-        {createField("email", "email", [required], Input)}
+        {createField("username", "username", [required], Input, {type: "username"})}
       </div>
       <div>
-        {createField(createField("password", "password", [required], Input, {type: "password"}))}
+        {createField("password", "password", [required], Input, {type: "password"})}
       </div>
       <div>
-        {createField(null, "checkbox", [], Input, {type: 'checkbox'})}
+        {/* {createField(null, "checkbox", [], Input, {type: 'checkbox'})} */}
       </div>
       <div>
         { error && <div className={st.formaerror}>
@@ -33,6 +34,7 @@ const LoginForm = ({ handleSubmit, error }) => {
     </form>
   </div>
 }
+
 
 const LoginReduxForm = reduxForm({
   form: 'login'
@@ -52,4 +54,14 @@ const Users = (props) => {
    </div>
 }
 
-export default Users;
+let mapStateToProps = (state) => {
+  return {
+    authPage: state.authPage
+  }
+}
+
+export default connect(mapStateToProps, {loginThunk})(Users);
+
+// export default Users;
+
+// LoginForm

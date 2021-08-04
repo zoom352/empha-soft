@@ -25,15 +25,23 @@ export const setAuthData = (username, password) => (
 )
 
 
-export const loginThunk = () => (dispatch) => {
-    return authAPI.login('', '')
+export const loginThunk = (username, password) => (dispatch) => {
+    return authAPI.login(username, password)
         .then(response => {
+            debugger;
             if (response.data) {
                 let { username, password } = response.data.data;
                 dispatch(setAuthData(username, password))
            }
        })
 }
+
+// export const loginThunk = (username, password) => (dispatch) => {
+//     return authAPI.login(username, password)
+//         .then(response => {
+//                 dispatch(setAuthData(response.data))
+//         })
+// }
 
 
 export default authReducer;

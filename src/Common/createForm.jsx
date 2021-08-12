@@ -1,4 +1,4 @@
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import s from './Login.module.css';
 
 export const Textarea = ({ input, meta, ...props }) => {
@@ -14,15 +14,14 @@ export const Textarea = ({ input, meta, ...props }) => {
 
 export const Textarea2 = ({ input, meta, ...props }) => {
 
-    const hasError = meta.touched  && meta.error;
+    const hasError = meta.touched && meta.error;
     return <div className={s.formControl + ' ' + (hasError ? s.error : '')}>
         <div>
-            <input {...input} {...props} />
+            <input {...input} {...props}/>
         </div>
         {hasError && <span>{meta.error}</span>}
     </div>
 }
-
 
 
 
@@ -45,7 +44,7 @@ export const Textarea3 = (props) => {
 
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}><input {...input} {...restProps} /></FormControl>
+    return <FormControl {...props}><input {...input} {...restProps}/></FormControl>
 }
 
 export const createField = (placeholder, name, validators, component, props = {}, text = "") => (

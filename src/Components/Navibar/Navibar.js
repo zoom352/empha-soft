@@ -20,8 +20,8 @@ const Navibar = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-          <Nav.Link><NavLink to='/Home'>Home</NavLink></Nav.Link>              
-          <Nav.Link><NavLink to='/users'>Users</NavLink></Nav.Link>
+          <Nav.Link><NavLink to='/Users'>Users</NavLink></Nav.Link>              
+          <Nav.Link><NavLink to='/Login'>Login</NavLink></Nav.Link>
           <Nav.Link><NavLink to='/about'>about </NavLink></Nav.Link>
       <Nav.Link><NavLink to='/Photo'>Photo </NavLink></Nav.Link>
     </Nav>
